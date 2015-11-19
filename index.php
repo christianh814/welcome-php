@@ -7,16 +7,6 @@
 
 <style>
 
-/*!
- * Bootstrap v3.0.0
- *
- * Copyright 2013 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */
-
   .logo {
     background-size: cover;
     height: 58px;
@@ -302,7 +292,7 @@ echo "<br>";
 echo $gender;
 ?>
 
-
+<p> Information about your server <a href="info.php">here</a></p>
         <footer>
           <div class="logo"><a href="https://www.openshift.com/"></a></div>
         </footer>
