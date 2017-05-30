@@ -5,6 +5,7 @@ stage 'deployInDevelopment'
 openshiftDeploy(namespace: 'welcome-dev', deploymentConfig: 'welcome-dev')
 openshiftScale(namespace: 'welcome-dev', deploymentConfig: 'welcome-dev',replicaCount: '2')
 stage 'deployInTesting'
+input 'Promote Dev Image to Testing?'
 openshiftTag(namespace: 'welcome-dev', sourceStream: 'welcome-dev',  sourceTag: 'latest', destinationStream: 'welcome-dev', destinationTag: 'promoteToQA')
 openshiftDeploy(namespace: 'welcome-test', deploymentConfig: 'welcome-test', )
 openshiftScale(namespace: 'welcome-test', deploymentConfig: 'welcome-test',replicaCount: '3')
