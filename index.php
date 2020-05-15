@@ -203,8 +203,8 @@ line-height: 1.4;
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $animalErr = $websiteErr = "";
+$name = $email = $animal = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (empty($_POST["name"])) {
@@ -243,10 +243,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $comment = test_input($_POST["comment"]);
    }
 
-   if (empty($_POST["gender"])) {
-     $genderErr = "Gender is required";
+   if (empty($_POST["animal"])) {
+     $animalErr = "Animal is required";
    } else {
-     $gender = test_input($_POST["gender"]);
+     $animal = test_input($_POST["animal"]);
    }
 }
 
@@ -270,10 +270,10 @@ function test_input($data) {
    <br><br>
    Comment:<br> <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
    <br><br>
-   Gender:
-   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?>  value="female">Female
-   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?>  value="male">Male
-   <span class="error">* <?php echo $genderErr;?></span>
+   Favorite Animal:
+   <input type="radio" name="animal" <?php if (isset($animal) && $animal=="dog") echo "checked";?>  value="dog">Dog
+   <input type="radio" name="animal" <?php if (isset($animal) && $animal=="cat") echo "checked";?>  value="cat">Cat
+   <span class="error">* <?php echo $animalErr;?></span>
    <br><br>
    <input type="submit" name="submit" value="Submit">
 </form>
@@ -289,7 +289,7 @@ echo $website;
 echo "<br>";
 echo $comment;
 echo "<br>";
-echo $gender;
+echo $animal;
 ?>
 
 <p> Information about your server <a href="info.php">here</a></p>
