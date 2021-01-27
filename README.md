@@ -1,6 +1,6 @@
 # PHP Welcome Page
 
-This is an example PHP application you can use to test your OSEv3 environment.
+This is an example PHP application you can use to test your OpenShift environment.
 
 Here is an example:
 ```
@@ -8,8 +8,8 @@ user@host$ oc new-app openshift/php~https://github.com/christianh814/welcome-php
 ```
 
 Things to keep in mind:
-* `ose new-app` Creates a new application on OSE3
-* `openshift/php` This tells OSEv3 to use the PHP image stream provided by OSE
+* `ose new-app` Creates a new application on OpenShift
+* `openshift/php` This tells OpenShift to use the PHP image stream builder
 * Provide the git URL for the project
   * Syntax is "imagestream~souce"
 
@@ -21,7 +21,7 @@ user@host$ oc start-build welcome-php
 
 Once the build completes; create and add your route:
 ```
-user@host$ oc expose svc welcome-php --hostname=welcome-php.cloudapps.example.com
+user@host$ oc expose svc welcome-php
 ```
 
 Scale up as you wish
